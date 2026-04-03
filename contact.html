@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | bluebeyondform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f0f4f8;
+      --surface: #ffffff;
+      --ink: #1e2d3d;
+      --ink-soft: #5a7a94;
+      --blue: #6b9ab8;
+      --blue-light: #ddeaf4;
+      --blue-mid: #a8c8e0;
+      --blue-dark: #3d6880;
+      --accent: #4a8fa8;
+      --yellow: #e8d5a3;
+      --border: #c8dde8;
+      --font-display: 'Nunito', sans-serif;
+      --font-body: 'Quicksand', sans-serif;
+      --shadow: 0 4px 24px rgba(74,130,168,0.10);
+      --shadow-card: 0 8px 32px rgba(74,130,168,0.15);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+      font-size: 15px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        radial-gradient(circle, #a8c8e0 1.5px, transparent 1.5px),
+        radial-gradient(circle, #b0c4d8 1px, transparent 1px),
+        radial-gradient(circle, #e8d5a3 1.5px, transparent 1.5px);
+      background-size: 160px 160px, 240px 240px, 200px 200px;
+      background-position: 20px 20px, 80px 60px, 140px 10px;
+      opacity: 0.3;
+      z-index: 0;
+    }
+    nav {
+      position: fixed; top:0; left:0; right:0; z-index:100;
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 40px;
+      background: rgba(240,244,248,0.90);
+      backdrop-filter: blur(16px);
+      border-bottom: 2px solid var(--border);
+    }
+    .nav-logo {
+      font-family: var(--font-display); font-size:1.1rem; font-weight:900;
+      color:var(--ink); text-decoration:none;
+    }
+    .nav-logo span {
+      background: linear-gradient(135deg, var(--accent), var(--blue-dark));
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    }
+    .nav-back {
+      font-family: var(--font-display); font-weight:700; font-size:0.82rem;
+      color: var(--blue-dark); text-decoration:none;
+      display:flex; align-items:center; gap:6px;
+      transition: opacity 0.2s;
+    }
+    .nav-back:hover { opacity: 0.7; }
+    .fan-banner {
+      position:fixed; top:52px; left:0; right:0; z-index:99;
+      background:var(--blue-light); border-bottom:2px solid var(--border);
+      padding:7px 40px; text-align:center;
+    }
+    .fan-banner p {
+      font-family:var(--font-display); font-size:0.75rem;
+      font-weight:700; color:var(--blue-dark);
+    }
+    .page-wrap {
+      position: relative; z-index:1;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 160px 40px 80px;
+    }
+    .contact-card {
+      background: white;
+      border: 2px solid var(--border);
+      border-radius: 28px;
+      padding: 60px 56px;
+      max-width: 520px;
+      width: 100%;
+      box-shadow: var(--shadow-card);
+      text-align: center;
+    }
+    .contact-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      display: block;
+      animation: floatIcon 4s ease-in-out infinite;
+    }
+    @keyframes floatIcon {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .contact-card h1 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 2rem;
+      margin-bottom: 12px;
+      color: var(--ink);
+    }
+    .contact-card h1 span {
+      background: linear-gradient(135deg, var(--accent), var(--blue-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .contact-card p {
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      font-weight: 500;
+      line-height: 1.75;
+      margin-bottom: 32px;
+    }
+    .email-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--blue-dark));
+      color: white;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.95rem;
+      border-radius: 100px;
+      padding: 15px 36px;
+      text-decoration: none;
+      box-shadow: 0 6px 24px rgba(74,130,168,0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+    .email-btn:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 12px 32px rgba(74,130,168,0.45);
+    }
+    .email-display {
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+      font-weight: 600;
+    }
+    .divider {
+      border: none;
+      border-top: 2px dashed var(--border);
+      margin: 28px 0;
+    }
+    .response-note {
+      background: var(--blue-light);
+      border: 1.5px solid var(--blue-mid);
+      border-radius: 14px;
+      padding: 14px 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--blue-dark);
+      line-height: 1.6;
+    }
+    .footer-wave { line-height:0; }
+    .footer-wave svg { display:block; }
+    footer {
+      position:relative; z-index:1; background:var(--ink);
+      color:rgba(255,255,255,0.55); padding:28px 40px;
+      display:flex; justify-content:space-between; align-items:center;
+    }
+    .foot-logo { font-family:var(--font-display); font-weight:900; font-size:1rem; color:white; }
+    footer p { font-size:0.72rem; font-weight:500; }
+    footer a { color:rgba(255,255,255,0.5); text-decoration:none; font-size:0.78rem; font-weight:600; }
+    footer a:hover { color:var(--blue-mid); }
+    .fan-note { font-size:0.68rem; opacity:0.45; margin-top:6px; text-align:center; width:100%; }
+    @media(max-width:768px) {
+      nav { padding:14px 20px; }
+      .page-wrap { padding:140px 20px 60px; }
+      .contact-card { padding:40px 28px; }
+      footer { flex-direction:column; gap:12px; text-align:center; padding:28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">✦ <span>bluebeyondform</span></a>
+  <a href="index.html" class="nav-back">← Back to Preorder</a>
+</nav>
+
+<div class="fan-banner">
+  <p>These plushies are fan made. Clinical Trial is created by homunculus100.</p>
+</div>
+
+<div class="page-wrap">
+  <div class="contact-card">
+    <span class="contact-icon">💌</span>
+    <h1>Got a <span>question?</span></h1>
+    <p>For order questions, concerns, or anything else related to your bluebeyondform preorder, send me an email and I'll get back to you as soon as I can.</p>
+
+    <a href="mailto:bluebmerchllc@gmail.com?subject=bluebeyondform Plushie Preorder" class="email-btn">
+      ✦ Send Us an Email
+    </a>
+    <p class="email-display">bluebmerchllc@gmail.com</p>
+
+    <hr class="divider" />
+
+    <div class="response-note">
+      💙 I typically respond within 1 to 3 business days. Please include your order details in your message so I can help you faster!
+    </div>
+  </div>
+</div>
+
+<div class="footer-wave">
+  <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="50" width="100%">
+    <path d="M0,25 C360,50 720,0 1080,25 C1260,37 1380,20 1440,25 L1440,50 L0,50Z" fill="#1e2d3d"/>
+  </svg>
+</div>
+
+<footer>
+  <span class="foot-logo">✦ bluebeyondform</span>
+  <p>© 2025 bluebeyondform · Clinical Trial Plushies</p>
+  <div style="display:flex;gap:20px;">
+    <a href="mailto:bluebmerchllc@gmail.com">Contact</a>
+    <a href="https://bluebeyondform.straw.page/plushiefaq" target="_blank">FAQ</a>
+  </div>
+  <p class="fan-note">These plushies are fan made. Clinical Trial is created by homunculus100.</p>
+</footer>
+
+</body>
+</html>

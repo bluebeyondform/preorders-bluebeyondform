@@ -292,7 +292,7 @@
 </nav>
 
 <div style="position:fixed;top:52px;left:0;right:0;z-index:99;background:var(--blue-light);border-bottom:2px solid var(--border);padding:7px 40px;text-align:center;">
- <p style="font-family:var(--font-display);font-size:0.75rem;font-weight:700;color:var(--blue-dark);">These plushies are fan made. Clinical Trial is created by homieshouse on Itchio</p>
+ <p style="font-family:var(--font-display);font-size:0.75rem;font-weight:700;color:var(--blue-dark);">These plushies are fan made. Clinical Trial is created by homieshouse on Itchio.</p>
 </div>
 
 <section class="hero">
@@ -328,9 +328,6 @@
         </div>
       </div>
     </div>
-    <div class="bundle-note">
-      Get both together for <span>$80</span> and save $10! 🧸🧸
-    </div>
   </div>
 </section>
 
@@ -342,7 +339,7 @@
  </div>
  <div class="perk-card fade-up" style="transition-delay:0.1s">
  <span class="perk-icon">🧸</span>
- <h3>High Quality Plush</h3>
+ <h3>40cm High Quality Plush</h3>
  <p>Carefully designed to look just like Lee and Angel. Super soft, display-worthy, and made with love for the Clinical Trial community.</p>
  </div>
  <div class="perk-card fade-up" style="transition-delay:0.2s">
@@ -386,8 +383,12 @@
  <span class="val">$80.00 ✨</span>
  </div>
  <div class="math-row">
- <span class="label">Shipping</span>
- <span class="val">Calculated at checkout</span>
+ <span class="label">Shipping (US)</span>
+ <span class="val">Included in price</span>
+ </div>
+ <div class="math-row" style="flex-direction:column;align-items:flex-start;gap:4px;">
+ <span class="label">Shipping (International)</span>
+ <span class="val" style="font-size:0.8rem;">Outside the US? Email <a href="mailto:bluebmerchllc@gmail.com?subject=International Shipping Quote" style="color:var(--accent);">bluebmerchllc@gmail.com</a> for a shipping quote before ordering.</span>
  </div>
  <div class="math-row">
  <span class="label">Est. delivery</span>
@@ -404,9 +405,9 @@
  <label for="character">Which plushie(s)?</label>
  <select id="character" name="character" required>
  <option value="" disabled selected>Choose your plushie ✦</option>
- <option value="angel" data-price="45">Angel 🐰 · $40</option>
- <option value="lee" data-price="45">Lee 🐶 · $40</option>
- <option value="both" data-price="80">Both 🐰🐶 · $80 (save $10!)</option>
+ <option value="angel" data-price="40">Angel 🐰 · $40</option>
+ <option value="lee" data-price="40">Lee 🐶 · $40</option>
+ <option value="both" data-price="80">Both 🐰🐶 · $80</option>
  </select>
  </div>
  <div class="price-display">
@@ -418,8 +419,8 @@
  </form>
  <div class="success-msg" id="success-msg">
  <div class="success-icon">🎉</div>
- <h3>Thank you!</h3>
- <p>We'll update you as your production gets underway.</p>
+ <h3>You're on the list!</h3>
+ <p>Check your email for confirmation. We'll update you as production gets underway. Thank you! </p>
  </div>
  </div>
  </div>
@@ -435,7 +436,7 @@
 <footer>
  <span class="foot-logo">✦ bluebeyondform</span>
  <p>© 2025 bluebeyondform · Clinical Trial Plushies</p>
- <p style="font-size:0.72rem;opacity:0.5;margin-top:6px;text-align:center;width:100%;">These plushies are fan made. Clinical Trial is created by homieshouse on Itchio. </p>
+ <p style="font-size:0.72rem;opacity:0.5;margin-top:6px;text-align:center;width:100%;">These plushies are fan made. Clinical Trial is created by homieshouse on Itchio.</p>
  <div style="display:flex;gap:20px;">
  <a href="https://x.com/bluebeyondform" target="_blank">Twitter</a>
  <a href="contact.html">Contact</a>
@@ -451,7 +452,7 @@
 
  const charSelect = document.getElementById('character');
  const livePrice = document.getElementById('live-price');
- const prices = { angel: 45, lee: 45, both: 80 };
+ const prices = { angel: 40, lee: 40, both: 80 };
 
  charSelect.addEventListener('change', function() {
  const val = this.value;

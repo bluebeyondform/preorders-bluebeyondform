@@ -1,0 +1,26 @@
+/* gallery-fix.css — fixes char-cards to horizontal compact row */
+
+.char-cards {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 10px !important;
+}
+
+.char-card {
+  flex: 1 !important;
+  min-width: 0 !important;
+  border-radius: 16px !important;
+}
+
+.char-card-img {
+  aspect-ratio: 0.85 !important;
+}
+
+.char-card-info {
+  padding: 7px 8px !important;
+}
+
+.char-card-info h3 {
+  font-size: 0.78rem !important;
+  margin-bottom: 1px !important;
+}
